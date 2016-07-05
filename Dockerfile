@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 ENV NGINX_VERSION 1.10.0
-ENV NGX_SMALL_LIGHT_VERSION 0.7.3
+ENV NGX_SMALL_LIGHT_VERSION master
 ENV IMAGEMAGICK_VERSION 6.8.6-8
 
 # Install dependency packages
@@ -50,7 +50,7 @@ RUN curl -L http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz > /tmp/nginx
     tar zxf nginx-${NGINX_VERSION}.tar.gz
 
 # Fetch and unarchive ngx_small_light module
-RUN curl -L https://github.com/cubicdaiya/ngx_small_light/archive/v${NGX_SMALL_LIGHT_VERSION}.tar.gz > /tmp/ngx_small_light-${NGX_SMALL_LIGHT_VERSION}.tar.gz && \
+RUN curl -L https://github.com/pocake/ngx_small_light/archive/master.tar.gz  > /tmp/ngx_small_light-${NGX_SMALL_LIGHT_VERSION}.tar.gz && \
     cd /tmp && \
     tar zxf ngx_small_light-${NGX_SMALL_LIGHT_VERSION}.tar.gz && \
     cd /tmp/ngx_small_light-${NGX_SMALL_LIGHT_VERSION} && \
